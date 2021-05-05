@@ -1,0 +1,4 @@
+13d5c6284db24f1389fd0f6d7476a159
+9dff210bd56246b2b01634eaf198b4bc
+https://20210503-shinya-y.cognitiveservices.azure.com/
+southcentralus
