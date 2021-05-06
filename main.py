@@ -28,7 +28,7 @@ if uploaded_file is not None:
 
     res = requests.post(face_api_url,params=params,headers=headers,data=binary_img)
     results = res.json()
-    #font = ImageFont.truetype(None, 25)
+    font = ImageFont.truetype(None, 25)
 
     for result in results:
         rect = result['faceRectangle']
@@ -37,7 +37,7 @@ if uploaded_file is not None:
         gd = attr['gender']
         draw = ImageDraw.Draw(img)
         draw.rectangle([(rect['left'],rect['top']),(rect['left']+rect['width'],rect['top']+rect['height'])],fill=None,outline='green',width=5)
-        draw.text((rect['left'],rect['top']-60),ag,fontsize=25,fill=(255,255,0,0))
-        draw.text((rect['left'],rect['top']-30),gd,fontsize=25,fill=(255,255,0,0))
+        draw.text((rect['left'],rect['top']-60),ag,font=font,fill=(255,255,0,0))
+        draw.text((rect['left'],rect['top']-30),gd,font=font,fill=(255,255,0,0))
 
     st.image(img, caption='Uploaded Image.', use_column_width=True)
